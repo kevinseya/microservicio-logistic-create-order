@@ -14,7 +14,7 @@ Make sure you have the following installed on your system:
 ### 1. Clone the repository (if applicable)
 If the project is hosted on a Git repository, clone it to your local machine:
 ```bash
-git clone 
+git clone https://github.com/kevinseya/microservicio-logistic-create-order.git
 ```
 2. Install Dependencies
 
@@ -27,12 +27,12 @@ npm install
 
     Create a MySQL database named logistics_db.
     Update the database credentials in the file src/config/dbConfig.js:
-
+```bash
 const sequelize = new Sequelize('logistics_db', 'your_username', 'your_password', {
     host: 'localhost',
     dialect: 'mysql',
 });
-
+```
 4. Run the Project
 
 Start the server by running:
