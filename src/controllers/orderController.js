@@ -1,4 +1,3 @@
-
 const Order = require('../models/order');
 
 // Create a new order
