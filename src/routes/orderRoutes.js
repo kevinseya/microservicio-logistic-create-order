@@ -32,8 +32,6 @@ const orderController = require('../controllers/orderController');
  *         description: Order created successfully
  */
 
-router.post('/orders', orderController.createOrder);
-
 // Route for creating a new order
 router.post('/orders', orderController.createOrder);
 
