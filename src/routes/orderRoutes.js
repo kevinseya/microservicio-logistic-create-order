@@ -15,18 +15,17 @@ const orderController = require('../controllers/orderController');
  *       content:
  *         application/json:
  *           schema:
- *             type: object
- *             properties:
- *               senderName:
- *                 type: string
- *               receiverName:
- *                 type: string
- *               packageDetails:
- *                 type: string
- *               shippingAddress:
- *                 type: string
- *               status:
- *                 type: string
+ *              type: 'object',
+                    properties: {
+                        orderId: { type: 'integer', description: 'Unique identifier for the order' },
+                        senderName: { type: 'string', description: 'Name of the sender' },
+                        receiverName: { type: 'string', description: 'Name of the receiver' },
+                        packageDetails: { type: 'string', description: 'Details of the package' },
+                        shippingAddress: { type: 'string', description: 'Shipping address for the package' },
+                        status: { type: 'string', description: 'Current status of the order' },
+                    },
+                    required: ['senderName', 'receiverName', 'packageDetails','shippingAddress', 'status'],
+                },
  *     responses:
  *       201:
  *         description: Order created successfully
