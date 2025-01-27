@@ -4,7 +4,8 @@ const Order = require('../models/order');
 // Create a new order
 exports.createOrder = async (req, res) => {
     try {
-        const newOrder = await Order.create(req.body);
+        const orderData = { ...req.body, status: req.body.status || 'Pending' };
+        const newOrder = await Order.create(orderData);
         res.status(201).json(newOrder);
     } catch (error) {
         console.error('Error creating order:', error);
