@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 // Routes setup
-app.use('/api', orderRoutes);
+app.use('/api/orders', orderRoutes);
 
 // Start server
 const PORT = 3000;
