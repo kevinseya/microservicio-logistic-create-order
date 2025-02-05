@@ -38,6 +38,6 @@ const orderController = require('../controllers/orderController');
  */
 
 // Route for creating a new order
-router.post('/orders', orderController.createOrder);
+router.post('/', orderController.createOrder);
 
 module.exports = router;
