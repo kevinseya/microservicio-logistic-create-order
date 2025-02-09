@@ -19,6 +19,10 @@ const Order = sequelize.define('Order', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    receiverPhone: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     packageDetails: {
         type: DataTypes.TEXT,
     },
