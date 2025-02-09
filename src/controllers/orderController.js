@@ -56,6 +56,7 @@ exports.createOrder = async (req, res) => {
             idCustomer: newOrder.idCustomer, 
             senderName: newOrder.senderName,
             receiverName: newOrder.receiverName,
+            receiverPhone: newOrder.receiverPhone,
             packageDetails: newOrder.packageDetails,
             shippingAddress: newOrder.shippingAddress,
             deliveryAddress: newOrder.deliveryAddress,
