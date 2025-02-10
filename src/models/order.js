@@ -40,6 +40,10 @@ const Order = sequelize.define('Order', {
     status: {
         type: DataTypes.STRING,
         defaultValue: 'Pending'
+    },
+    active:  {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
     }
 }, {
     tableName: 'orders',  
