@@ -13,40 +13,37 @@ const Order = sequelize.define('Order', {
     },
     senderName: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     receiverName: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     receiverPhone: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     packageDetails: {
-        type: DataTypes.TEXT,
+        type: DataTypes.TEXT
     },
     shippingAddress: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     deliveryAddress: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
     price: {
-        type: DataTypes.FLOAT,
-        allowNull: true,
+        type: DataTypes.FLOAT
     },
     status: {
         type: DataTypes.STRING,
-        defaultValue: 'Pending',
-    },
+        defaultValue: 'Pending'
+    }
+}, {
+    tableName: 'orders',  
+    timestamps: true      
 });
-
-
-sequelize.sync({ alter: true })
-    .then(() => console.log('Order table updated successfully'))
-    .catch(err => console.error('Error updating table:', err));
 
 module.exports = Order;
