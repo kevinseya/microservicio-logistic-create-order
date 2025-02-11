@@ -28,11 +28,11 @@ app.listen(PORT, () => {
 });
 
 // Synchronize models with the database
-sequelize.sync({ alter: true })
+sequelize.sync({ force: true })
     .then(() => {
-        console.log('Database synchronized successfully.');
+        console.log('Database synchronized and tables recreated.');
     })
     .catch((error) => {
         console.error('Failed to synchronize database:', error);
     });
-    
+

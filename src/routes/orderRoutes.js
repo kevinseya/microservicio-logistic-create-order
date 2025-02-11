@@ -17,18 +17,28 @@ const orderController = require('../controllers/orderController');
  *           schema:
  *             type: object
  *             properties:
+ *               "idCustomer":
+ *                 type: string
+ *                 example: "123e4567-e89b-12d3-a456-426614174000"
  *               "senderName":
  *                 type: string
  *                 example: "Kenya Luna"
  *               "receiverName":
  *                 type: string
  *                 example: "Alejandra Luna"
+ *               "receiverPhone":
+ *                 type: string
+ *                 example: "0987654321"
  *               "packageDetails":
  *                 type: string
  *                 example: "Books and documents"
  *               "shippingAddress":
  *                 type: string
- *                 example: "La Arcadia"
+ *                 example: "La Gazca, Quito, Ecuador"
+ *               "deliveryAddress":
+ *                 type: string
+ *                 example: "Av. Amazonas 123, Guayaquil, Ecuador"
+ *                                         
  *     responses:
  *       201:
  *         description: Order created successfully
