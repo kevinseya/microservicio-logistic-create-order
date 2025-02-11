@@ -1,6 +1,8 @@
 const Order = require('../models/order');
 const axios = require('axios');
-require('dotenv').config();
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../../.env") });
+
 
 // Function to calculate distance using Google Maps API
 async function getDistance(origin, destination) {
