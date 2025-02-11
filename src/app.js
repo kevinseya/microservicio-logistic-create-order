@@ -4,6 +4,8 @@ const orderRoutes = require('./routes/orderRoutes');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocs = require('./swagger/swaggerConfig');
 const sequelize = require('./config/dbConfig'); 
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../../.env") });
 
 const app = express();
 
@@ -22,7 +24,7 @@ app.get('/', (req, res) => {
 app.use('/api/order', orderRoutes);
 
 // Start server
-const PORT = 7000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
