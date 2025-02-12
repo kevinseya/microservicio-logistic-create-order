@@ -17,12 +17,12 @@ jobs:
       - name: Build Docker Image
         run: |
           echo "Building Docker image..."
-          docker build -t kevinseya/logistic_login_validation:latest .
+          docker build -t kevinseya/logistic_create_order:latest .
 
       - name: Push Docker Image
         run: |
           echo "Pushing Docker image to Docker Hub..."
-          docker push kevinseya/logistic_login_validation:latest
+          docker push kevinseya/logistic_create_order:latest
 
   deploy-to-ec2:
     needs: build-and-push-image
@@ -45,11 +45,11 @@ jobs:
             fi
 
             # Bajar la imagen
-            sudo docker pull kevinseya/logistic_login_validation:latest
+            sudo docker pull kevinseya/logistic_create_order:latest
 
             # Detener y eliminar contenedor anterior
-            sudo docker stop logistic_login_validation || true
-            sudo docker rm logistic_login_validation || true
+            sudo docker stop logistic_create_order || true
+            sudo docker rm logistic_create_order || true
 
             # Generar archivo .env
             echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
@@ -61,8 +61,8 @@ jobs:
             echo "PORT=${{ secrets.PORT }}" >> .env
 
             # Ejecutar nuevo contenedor
-            sudo docker run -d --name logistic_login_validation \
+            sudo docker run -d --name logistic_create_order \
               --env-file .env \
-              -p 5000:5000 \
-              kevinseya/logistic_login_validation:latest
+              -p 7000:7000 \
+              kevinseya/logistic_create_order:latest
           EOF
